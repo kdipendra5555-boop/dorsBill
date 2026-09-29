@@ -1,11 +1,18 @@
-import Navbar from "./Pages/Dorsbill_Mainpage/Navbar/Navbar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Pages/Dorsbill_Mainpage/homePage/Home";
+import Pricing from "./Pages/Pricing/Pricing";
 
-function App() {
+
+
+
+export default function App() {
   return (
-    <main className="min-h-screen bg-white">
-      <Navbar />
-    </main>
+    <BrowserRouter>
+      <Routes>
+        
+        <Route path="/" element={<Home />} />
+        <Route path="/pricing" element={<Pricing />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
