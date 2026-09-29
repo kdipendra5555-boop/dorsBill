@@ -33,16 +33,11 @@ const categories = [
   "Special Invoice Types",
 ];
 
+// Duplicate arrays for seamless marquee animation
 const rowOne = [...categories, ...categories];
 const rowTwo = [...categories, ...categories];
 
-function CategoryCard({
-  name,
-  index,
-}: {
-  name: string;
-  index: number;
-}) {
+function CategoryCard({ name }: { name: string }) {
   return (
     <div
       className="
@@ -64,9 +59,6 @@ function CategoryCard({
         hover:shadow-[0_5px_18px_rgba(0,0,0,0.055)]
       "
     >
-      
-
-      {/* Category */}
       <span
         className="
           whitespace-nowrap
@@ -134,14 +126,12 @@ export default function TemplateCategoriesMarquee() {
         </p>
       </div>
 
-
       {/* =====================================================
           MARQUEE
       ===================================================== */}
 
       <div className="relative w-full">
-
-        {/* Left fade */}
+        {/* Left Fade */}
         <div
           className="
             pointer-events-none
@@ -158,7 +148,7 @@ export default function TemplateCategoriesMarquee() {
           "
         />
 
-        {/* Right fade */}
+        {/* Right Fade */}
         <div
           className="
             pointer-events-none
@@ -174,7 +164,6 @@ export default function TemplateCategoriesMarquee() {
             to-transparent
           "
         />
-
 
         {/* =================================================
             ROW 1
@@ -197,12 +186,10 @@ export default function TemplateCategoriesMarquee() {
               <CategoryCard
                 key={`row-one-${index}`}
                 name={category}
-                index={index}
               />
             ))}
           </motion.div>
         </div>
-
 
         {/* =================================================
             ROW 2
@@ -225,17 +212,14 @@ export default function TemplateCategoriesMarquee() {
               <CategoryCard
                 key={`row-two-${index}`}
                 name={category}
-                index={index}
               />
             ))}
           </motion.div>
         </div>
-
       </div>
 
-
       {/* =====================================================
-          BOTTOM
+          BOTTOM BADGE
       ===================================================== */}
 
       <div className="mt-8 flex justify-center">
@@ -259,7 +243,6 @@ export default function TemplateCategoriesMarquee() {
           </span>
         </div>
       </div>
-
     </section>
   );
 }
